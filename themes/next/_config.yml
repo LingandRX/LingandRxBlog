@@ -424,9 +424,10 @@ font:
     family: Lato
     size:
 
+  # 网站标题字体设置
   # Font settings for site title (.site-title).
   title:
-    external: true
+    external: true 
     family:
     size:
 

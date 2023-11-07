@@ -103,8 +103,10 @@ theme: next
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: git@121.4.77.206:/var/repo/hexo.git
-  # repo: git@github.com:LingandRX/LingandRX.github.io.git
+  # 设置自定义仓库
+  # repo: git@121.4.77.206:/var/repo/hexo.git
+  # 设置gitpages页面
+  repo: git@github.com:LingandRX/LingandRX.github.io.git
   branch: master
 
 algolia:    

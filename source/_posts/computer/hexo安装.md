@@ -19,8 +19,8 @@ apt-get -y install git
 > 配置Git
 <!-- more -->
 ```shell
-git config global user.name="lingandrx"
-git config global user.email="123@email.com"
+git config global user.name="testname"
+git config global user.email="test@email.com"
 ```
 
 ## 安装Node.js

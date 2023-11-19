@@ -1,6 +1,6 @@
 ---
 layout: post
-title: git配置
+title: Git配置 
 date: 2023-05-31 07:51:51
 tags:
     - git
@@ -8,46 +8,50 @@ categories:
     - [学习]
 ---
 
-进入gitbash，或者powershell
+## 设置机器的git的用户信息
 
-## 设置git的用户信息
-
-```powershell
-git config --global user.name '用户名'
-git config --global user.email 'xxx@qq.com'
+```shell
+git config --global user.name 'testname'
+git config --global user.email 'test@test.com'
 ```
 <!-- more -->
-## 生产rsa信息
+## 生成id_rsa密钥和id_rsa.pub公开密钥
 
 ```shell
 ssh-keygen -t rsa
 ```
 
-rsa信息会存储在`'C:\\Users\\电脑用户名/.ssh'`目录中
+密钥和公开密钥信息存储在`'~/.ssh'`目录中
 
 ```shell
-Mode                 LastWriteTime         Length Name
-----                 -------------         ------ ----
--a----         2023/5/31      7:54           2602 id_rsa
--a----         2023/5/31      7:54            565 id_rsa.pub
--a----         2023/5/31      7:57            831 known_hosts
--a----         2023/5/31      7:57             93 known_hosts.old
+.ssh/
+├── authorized_keys
+├── id_rsa
+├── id_rsa.pub
+└── known_hosts
 ```
+
+authorized_keys: 免密登录/密钥登录
+id_rsa: 密钥
+id_rsa.pub: 公开密钥
+known_hosts: 记录登录机器信息
 
 ## 配置github
 
-在github设置界面打开SSH and GPG keys页面
-
-点击new SSH keys
-
-Title起一个容易记得的名字
-
-Key type默认即可
-
-将`id_rsa.pub`中的内容至Key内容框中
+1. 在github设置界面打开SSH and GPG keys页面
+2. 点击new SSH keys
+3. 填写Title,任意名称
+4. Key type默认即可
+5. 将`id_rsa.pub`中的内容至Key内容框中
 
 ## 测试机器是否连通github
 
 ```shell
 ssh -t git@github.com
 ```
+
+## 配置免密登录
+
+1. 将pub文件传给要登录的机器`scp -P 22 ~/.ssh/id_rsa.pub root@ip地址:~/地址`
+2. 将公开密钥写入`authorized_keys`,`cat ~/地址/id_rsa.pub > ~/ssh/authorized_keys`
+3. 测试免密登录`ssh root@ip地址`

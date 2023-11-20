@@ -65,5 +65,8 @@ git log
 git blame <file>
 
 # 命令help
-t git <commond> help
+git <commond> help
+
+# 合并分支，合并到当前分支
+git merge [目标分支]
 ```

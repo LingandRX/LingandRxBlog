@@ -217,7 +217,48 @@ post_edit:
 # By default, tags at the bottom of posts have a symbol # at there left side.
 tag_icon: true
 
- 
+# 自定义字体
+font:
+  # 启用自定义字体
+  enable: true
+  # 字体url https://fonts.googleapis.com (默认项).
+  host: 
+  # `external: true`将从host加载字体到family
+  # `family: Times New Roman 字体类型
+  # `size: 默认1em（16px）
+
+  # 全局字体
+  global:
+    external: true
+    family: Amita
+    size: 
+  # 网站标题
+  title:
+    external: true
+    family: Lobster Two
+    size: 
+  # 文章标题
+  headings:
+    external: true
+    family: Amita
+    size: 
+  # 文章
+  posts:
+    external: true
+    family: Montserrat
+    size:
+  # 代码
+  codes:
+    external: true
+    family: Consolas, 'Courier New', monospace
+    size: 0.875
+
+# 允许用户保存阅读进度的插件
+bookmark:
+  enable: true
+  color: '#222'
+  # 如果是自动，则在关闭页面或单击书签图标时保存阅读进度。# 如果是手动的，只需单击书签图标即可保存
+  save: auto
 
 # Show Views / Visitors of the website / page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi
